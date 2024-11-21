@@ -2,6 +2,7 @@
 import Banner from "./components/Banner"
 import Navbar from "./components/Navbar"
 import { Routes, Route, Outlet, Link, Navigate } from "react-router-dom";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";

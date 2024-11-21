@@ -6,7 +6,7 @@ import { FaArrowRight } from "react-icons/fa6";
 
 export default function SectionTitle(Props) {
   return (
-    <div className=" mb-5 mt-[150px]  ">
+    <div className=" flex-wrap  justify-between mb-14 mt-[150px]  ">
 
   <div className="gap-4 flex items-center">
       <div className="h-10 w-5 bg-primary rounded"></div>

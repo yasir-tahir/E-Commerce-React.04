@@ -22,7 +22,7 @@ function Something({index}){
 
 export default function Slider() {
   return (
-    <div>Slider
+    <div>
          <Swiper
       spaceBetween={50} 
       slidesPerView={4}
@@ -42,7 +42,7 @@ export default function Slider() {
       <SwiperSlide> <ProductCard percent="-35%" image={img1} text="AK -900 Wired Keyboard" discount="$960" actual="$1160" star={stars1} /> </SwiperSlide>
       <SwiperSlide> <ProductCard percent="-30%" image={img2} text="IPS LCD Gaming Monitor" discount="$370" actual="$400" star={stars2} /> </SwiperSlide>
      
-      ...
+      
     </Swiper>
 
     </div>

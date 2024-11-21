@@ -1,12 +1,10 @@
-import cover from '../assets/images/CoverSlide.png'
 
-
-export default function CoverSlide() {
+ export default function CoverSlide(Props) {
   return (
-    <div className='Container'>
+    <div className='Container mt-20'>
 
   
-    <img src={cover} alt='cover img'  className='w-full'/>
+    <img src={Props.cover} alt='cover img'  className='w-full'/>
 
   
     </div>

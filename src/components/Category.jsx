@@ -8,7 +8,7 @@ import watchs from '../assets/images/watch.png'
 
 export default function Category() {
   return (
-    <div className="container center gap-[30px] " >
+    <div className="flex justify-center flex-wrap gap-[30px] " >
 
         <img src={phone} alt="products" />
         <img src={computer} alt="products" />
