@@ -11,6 +11,7 @@ const links = [
   { title: "home", link: "/" },
   { title: "about", link: "/about" },
   { title: "contact us", link: "/contact" },
+  // { title: "products", link: "/products"}
 ];
 
 
@@ -24,14 +25,14 @@ export default function Navbar() {
     "capitalize hover:underline cursor-pointer hover:text-primary";
 
   return (
-    <div className=" container gap-40 navbar h-28  bg-[#ffffff]  shadow-sm  flex justify-around items-center">
+    <div className=" container gap-40 navbar h-28 bg-[#ffffff]  shadow-sm  flex justify-around items-center">
         
     <h1 className=" font-bold text-2xl">
     Exclusive    
     </h1>    
 
 {/* Desktop Navbar */}
-<ul className="hidden md:flex gap-3">
+<ul className="hidden md:flex gap-4">
         {links.map((item, i) => (
           <li className={navLinkStyle} key={i}>
             <Link to={item.link}>{item.title}</Link>

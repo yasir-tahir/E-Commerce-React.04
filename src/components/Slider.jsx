@@ -34,13 +34,13 @@ export default function Slider() {
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
     >
-      <SwiperSlide> <ProductCard percent="-40%" image={img} text="HAVIT HV-G92 Gamepad" discount="$120" actual="$160" star={stars}  /> </SwiperSlide>
-      <SwiperSlide> <ProductCard percent="-35%" image={img1} text="AK -900 Wired Keyboard" discount="$960" actual="$1160" star={stars1} /> </SwiperSlide>
-      <SwiperSlide> <ProductCard percent="-30%" image={img2} text="IPS LCD Gaming Monitor" discount="$370" actual="$400" star={stars2} /> </SwiperSlide>
-      <SwiperSlide> <ProductCard percent="-25%" image={img3} text="S-Series Comfort Chair " discount="$375" actual="400" star={stars3} /> </SwiperSlide>
-      <SwiperSlide> <ProductCard percent="-40%" image={img} text="HAVIT HV-G92 Gamepad" discount="$120" actual="$160" star={stars} /> </SwiperSlide>
-      <SwiperSlide> <ProductCard percent="-35%" image={img1} text="AK -900 Wired Keyboard" discount="$960" actual="$1160" star={stars1} /> </SwiperSlide>
-      <SwiperSlide> <ProductCard percent="-30%" image={img2} text="IPS LCD Gaming Monitor" discount="$370" actual="$400" star={stars2} /> </SwiperSlide>
+      <SwiperSlide> <ProductCard percent="-40%" image={img} text="HAVIT HV-G92 Gamepad"  star={stars}  /> </SwiperSlide>
+      <SwiperSlide> <ProductCard percent="-35%" image={img1} text="AK -900 Wired Keyboard"  star={stars1} /> </SwiperSlide>
+      <SwiperSlide> <ProductCard percent="-30%" image={img2} text="IPS LCD Gaming Monitor"  star={stars2} /> </SwiperSlide>
+      <SwiperSlide> <ProductCard percent="-25%" image={img3} text="S-Series Comfort Chair "  star={stars3} /> </SwiperSlide>
+      <SwiperSlide> <ProductCard percent="-40%" image={img} text="HAVIT HV-G92 Gamepad"  star={stars} /> </SwiperSlide>
+      <SwiperSlide> <ProductCard percent="-35%" image={img1} text="AK -900 Wired Keyboard"  star={stars1} /> </SwiperSlide>
+      <SwiperSlide> <ProductCard percent="-30%" image={img2} text="IPS LCD Gaming Monitor"  star={stars2} /> </SwiperSlide>
      
       
     </Swiper>

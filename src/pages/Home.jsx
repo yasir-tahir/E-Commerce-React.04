@@ -18,7 +18,7 @@ export default function Home() {
       <CoverSlide cover={cover} />    
       <FlashSale text="Today's" main="Flash Sales" />
       <Slider />
-      <Button />
+      <Button button={"View All Products"} />
       <Browse text="Categories" main="Browse By Category" />
       <Category />  
       <BestPrice text="This Month" main="Best Selling Price" />
@@ -27,7 +27,7 @@ export default function Home() {
       <Browse text="Our Products" main="Explore Our Products" />
       <Slider />
       <Slider />
-      <Button />
+      <Button button={"View All Products"} />
       <Browse text="Feature" main="New Arrival" />
       <NewArrival />
         </div>
