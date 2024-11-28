@@ -14,15 +14,56 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
-
-function Something({index}){
-    return <div className='w-40 h-96 border-r-8'>{index}</div>
-}
 
 export default function Slider() {
+
+
+  const API_KEY =  'https://dummyjson.com/products?limit=10&skip=10' 
+
+  const [products, setProducts] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState(null)
+
+  const getProductData = async () =>{
+  try{
+    setError(null) 
+    setIsLoading(true)
+  const response = await axios(API_KEY); 
+  
+  console.log("response", response.data.products);
+  
+  setProducts(response?.data?.products);
+  } catch (error) {
+    setError(
+      error?.response?.statusText || "Unknown error, please try again");
+    
+  } finally {
+    setIsLoading(false);
+  
+  }
+  
+  };
+  
+  useEffect(()=> { 
+  
+    getProductData();
+  },[]);
+  
+  console.log("Slider", products);
+  
+  
+
+
   return (
-    <div>
+    <div> 
+     {isLoading ? "loading..." : ""}
+     {error}
+
+
+
          <Swiper
       spaceBetween={50} 
       slidesPerView={4}
@@ -34,14 +75,31 @@ export default function Slider() {
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
     >
-      <SwiperSlide> <ProductCard percent="-40%" image={img} text="HAVIT HV-G92 Gamepad"  star={stars}  /> </SwiperSlide>
-      <SwiperSlide> <ProductCard percent="-35%" image={img1} text="AK -900 Wired Keyboard"  star={stars1} /> </SwiperSlide>
+
+      {products?.slice(0, 6)?.map((item) => (
+          <SwiperSlide key={item.id} >
+             
+             <ProductCard 
+              
+              image={item.thumbnail}
+              percent={-item.discountPercentage} 
+              text={item. title}  
+              price={item.price} 
+              discountPercentage={item.discountPercentage} 
+              star={stars}
+             /> 
+             
+             </SwiperSlide>
+      ))}
+
+      
+      {/* <SwiperSlide> <ProductCard percent="-35%" image={img1} text="AK -900 Wired Keyboard"  star={stars1} /> </SwiperSlide>
       <SwiperSlide> <ProductCard percent="-30%" image={img2} text="IPS LCD Gaming Monitor"  star={stars2} /> </SwiperSlide>
       <SwiperSlide> <ProductCard percent="-25%" image={img3} text="S-Series Comfort Chair "  star={stars3} /> </SwiperSlide>
       <SwiperSlide> <ProductCard percent="-40%" image={img} text="HAVIT HV-G92 Gamepad"  star={stars} /> </SwiperSlide>
       <SwiperSlide> <ProductCard percent="-35%" image={img1} text="AK -900 Wired Keyboard"  star={stars1} /> </SwiperSlide>
       <SwiperSlide> <ProductCard percent="-30%" image={img2} text="IPS LCD Gaming Monitor"  star={stars2} /> </SwiperSlide>
-     
+      */}
       
     </Swiper>
 
