@@ -2,30 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import stars from '../assets/images/star1.png'
+import useProducts from "../hooks/useProducts";
 
 
 export default function Products() {
    
- 
-
-const API_KEY =  'https://dummyjson.com/products'
-
-const [products, setProducts] = useState([])
-
-const getProductData = async () =>{
-
-const response = await axios(API_KEY); 
-
-console.log("response", response.data.products);
-
-setProducts(response?.data?.products);
-};
-
-useEffect(()=> { 
-
-  getProductData();
-},[]);
-
+  const {products,isLoading,error} = useProducts(); 
 
 // console.log("products", products);
 
@@ -73,7 +55,7 @@ const searchResult = searchProducts()
       
       <div className=" flex flex-wrap gap-4 center"> 
         {searchResult?.map((item) => (
-          <ProductCard  key={item.id} image={item.thumbnail} percent={item.discountPercentage} text={item.
+          <ProductCard  key={item.id} id={item.id} image={item.thumbnail} percent={item.discountPercentage} text={item.
              title}  price={item.price} discountPercentage={item.discountPercentage} star={stars}
              />  
         ))}

@@ -14,49 +14,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import useProducts from '../hooks/useProducts'
 
 
 export default function Slider() {
 
-
-  const API_KEY =  'https://dummyjson.com/products?limit=10&skip=10' 
-
-  const [products, setProducts] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState(null)
-
-  const getProductData = async () =>{
-  try{
-    setError(null) 
-    setIsLoading(true)
-  const response = await axios(API_KEY); 
+  const {products,isLoading,error} = useProducts('limit=5&skip=20');
   
-  console.log("response", response.data.products);
-  
-  setProducts(response?.data?.products);
-  } catch (error) {
-    setError(
-      error?.response?.statusText || "Unknown error, please try again");
-    
-  } finally {
-    setIsLoading(false);
-  
-  }
-  
-  };
-  
-  useEffect(()=> { 
-  
-    getProductData();
-  },[]);
-  
-  console.log("Slider", products);
-  
-  
-
-
   return (
     <div> 
      {isLoading ? "loading..." : ""}
@@ -80,7 +44,7 @@ export default function Slider() {
           <SwiperSlide key={item.id} >
              
              <ProductCard 
-              
+              id={item.id}
               image={item.thumbnail}
               percent={-item.discountPercentage} 
               text={item. title}  

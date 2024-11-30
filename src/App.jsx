@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Slider from "./components/Slider";
 import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
 
 
 
@@ -29,7 +30,8 @@ function App() {
   <Route path="/about" element= { <About /> } />
   <Route path="/contact" element= { <Contact Us /> } />
   <Route path="/products" element= { <Products /> } />
- 
+  <Route path="/product/:id" element= { <ProductDetail /> } />
+  
   {isLoggedIn ? (
     <>
     <Route path="/profile" element= { <div>this is my profile page</div> } />
