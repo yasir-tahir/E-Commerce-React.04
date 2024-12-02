@@ -1,6 +1,7 @@
 
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 
 export default function ProductCard(Props){
@@ -10,8 +11,8 @@ export default function ProductCard(Props){
 
     return(
         <div className='Container-card  group'>
-        <a 
-         href={`/product/${Props.id}`}   
+        <Link 
+         to={`/product/${Props.id}`}   
          className="border-2 p-3  bg-[#F5F5F5]  w-64 h-full ml-2 mt-2 ">
             <div className='discount top-3 left-3 bg-[#DB4444] font-[poppins]  w-14 h-6 rounded flex items-center justify-center text-xs text-[#FAFAFA]'>
                 {" "}
@@ -52,7 +53,7 @@ export default function ProductCard(Props){
         
         <span> <img src={Props.star} alt="star-img" />  </span>
         </div>
-        </a>
+        </Link>
         
   
         </div>
