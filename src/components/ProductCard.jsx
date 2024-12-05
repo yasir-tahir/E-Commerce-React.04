@@ -51,7 +51,6 @@ export default function ProductCard(Props){
         </p>
 
         
-        <span> <img src={Props.star} alt="star-img" />  </span>
         </div>
         </Link>
         
