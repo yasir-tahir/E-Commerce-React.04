@@ -1,19 +1,21 @@
 
-import { IoMdHeartEmpty } from "react-icons/io";
+import { IoMdHeartEmpty } from "react-icons/io"; 
 import { IoEyeOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 
 export default function ProductCard(Props){
+    const darkMode = useSelector((state) =>state.darkMode.darkMode);
 
    const discountPrice =  (Props.price - Props.discountPercentage * (Props.price/100)).toFixed(2)
     // console.log('discount', discountPrice);
 
     return(
-        <div className='Container-card  group'>
-        <Link 
+        <div className="bg-[#F5F5F5]  w-64 h-[450px] p-3 group" >
+        <Link  
          to={`/product/${Props.id}`}   
-         className="border-2 p-3  bg-[#F5F5F5]  w-64 h-full ml-2 mt-2 ">
+         className={` ${darkMode ? "bg-slate-600" : "bg-[#F5F5F5]"} w-64 h-full mt-2  `}>
             <div className='discount top-3 left-3 bg-[#DB4444] font-[poppins]  w-14 h-6 rounded flex items-center justify-center text-xs text-[#FAFAFA]'>
                 {" "}
                 {Props.percent}

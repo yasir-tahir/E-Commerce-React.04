@@ -7,8 +7,10 @@ import watchs from '../assets/images/watch.png'
 
 
 export default function Category() {
+  const darkMode = true; 
+  
   return (
-    <div className="flex justify-center flex-wrap gap-[30px] " >
+    <div className={`flex ${darkMode ? "text-white" : "" } justify-center flex-wrap gap-[20px]`} >
 
         <img src={phone} alt="products" />
         <img src={computer} alt="products" />

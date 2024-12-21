@@ -11,13 +11,16 @@ import BestPrice from "../components/BestPrice";
  import cover from "../assets/images/CoverSlide.png";
  import cover1 from "../assets/images/CoverSlide1.png";
 import useProducts from "../hooks/useProducts";
+import { useSelector } from "react-redux";
 
 
 export default function Home() {
+  const darkMode = useSelector((state) =>state.darkMode.darkMode);
+
   const {products,isLoading,error} = useProducts('limit=15&skip=25');
 
   return (
-    <div className="container" >
+    <div className={`container transition-colors duration-1000 ${darkMode ? "bg-slate-900" : ""} `} >
       <CoverSlide cover={cover} />    
       <FlashSale text="Today's" main="Flash Sales" />
       <Slider  />

@@ -156,11 +156,19 @@ import { RiRefund2Line } from "react-icons/ri";
 export default function ProductDetail(Props) {
   const params = useParams();
 
-  const { data } = useSWR(`https://dummyjson.com/products/${params.id}`, axios);
+  const { data, error, isLoading } = useSWR(`https://dummyjson.com/products/${params.id}`, axios);
   const product = data?.data;
 
   const [quantity, setQuantity] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
+
+  if(isLoading) return "loading...";
+  if(error)
+    return (
+        <div className="w-full h-screen center">
+          {JSON.stringify(error?.response?.data?.message)}
+        </div>
+    )
 
   return (
     <main className="bg-[#f7f6f6] min-h-[600px]">

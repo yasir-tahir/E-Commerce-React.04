@@ -5,8 +5,10 @@ import { FaArrowRight } from "react-icons/fa6";
 
 
 export default function SectionTitle(Props) {
+  const darkMode = true;
+
   return (
-    <div className=" flex-wrap  justify-between mb-14 mt-[150px]  ">
+    <div className={`flex-wrap ${darkMode ? "text-white" : ""} justify-between mb-14 mt-[150px]  `}>
 
   <div className="gap-4 flex items-center">
       <div className="h-10 w-5 bg-primary rounded"></div>
@@ -19,7 +21,7 @@ export default function SectionTitle(Props) {
     <div className="center mx-auto   gap-7 "> 
 
 
-<div className="center ml-auto text-xl">
+<div className={`center ${darkMode ? "text-black" : ""} ml-auto text-xl`}>
     <span className="rounded-[100px] p-2 block bg-[#F5F5F5] mr-3">
         <FaArrowLeft />
     </span>

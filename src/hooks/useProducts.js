@@ -16,7 +16,7 @@ export default function useProducts(query) {
     setIsLoading(true)
   const response = await axios(API_KEY); 
   
-  console.log("response", response.data.products);
+  // console.log("response", response.data.products);
   
   setProducts(response?.data?.products);
   } catch (error) {
@@ -35,7 +35,7 @@ export default function useProducts(query) {
     getProductData();
   },[]);
   
-  console.log("Slider", products);
+  // console.log("Slider", products);
   
 return{
     products: products,
